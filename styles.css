@@ -15,7 +15,7 @@ hr {
 
 .btnContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 10px auto;
     width: 50%;
     height: 50px;

@@ -1,6 +1,9 @@
 console.log('script.js sourced');
 
-
+var warnThick = false;
+var warnThin = false;
+var warnRadUp = false;
+var warnRadDown = false;
 var borderStyle;
 var borderWidth;
 var borderColor;
@@ -51,8 +54,9 @@ function thickenBorder(){
 
     if (width < 65) {
         width += 5;
-    } else {
+    } else if (!warnThick){
         alert('maximum width achieved');
+        warnThick = true;
     }
 
     $ex.css('border-width', width + 'px');
@@ -65,8 +69,9 @@ function thinBorder(){
 
     if (width > 0) {
         width -= 5;
-    } else {
+    } else if (!warnThin){
         alert('minimum width achieved');
+        warnThin = true;
     }
 
     $ex.css('border-width', width + 'px');
@@ -79,8 +84,9 @@ function radiusUp(){
     
     if (radius < 100) {
         radius +=10;
-    } else {
+    } else if (!warnRadUp){
         alert('maximum radius achieved');
+        warnRadUp = true;
     }
 
     $ex.css('border-radius', radius + 'px');
@@ -94,8 +100,9 @@ function radiusDown(){
     
     if (radius > 0) {
         radius -=10;
-    } else {
+    } else if (!warnRadDown){
         alert('minimum radius achieved');
+        warnRadDown = true;
     }
 
     $ex.css('border-radius', radius + 'px');
